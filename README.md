@@ -4,9 +4,7 @@
 
 - Make sure git is [setup](https://www.theodinproject.com/lessons/foundations-setting-up-git) properly on your system.
 
-   ```bash
-   git clone https://github.com/shivamgupta021/whatbytes-assignment.git && cd whatbytes-assignment
-   ```
+
 
 - #### Create and activate a virtual environment
    ```bash
