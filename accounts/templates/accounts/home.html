@@ -1,0 +1,74 @@
+{% extends "accounts/base.html" %}
+{% block content %}
+    <div class="card">
+        <h2>Welcome, {{ user.username }}!</h2>
+        <ul>
+            <li>
+                <a href="{% url 'profile' %}">Profile</a>
+            </li>
+            <li>
+                <a href="{% url 'password_change' %}">Change Password</a>
+            </li>
+            <li>
+                <form method="post" action="{% url 'logout' %}" class="logout-form">
+                    {% csrf_token %}
+                    <button type="submit">Log Out</button>
+                </form>
+            </li>
+        </ul>
+    </div>
+
+    <style>
+        .card {
+            padding: 20px;
+            background-color: #ffffff;
+            color: #333;
+            border-radius: 10px;
+            max-width: 400px;
+            margin: auto;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            font-family: 'Arial', sans-serif;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+            margin: 0;
+        }
+
+        li {
+            margin: 15px 0;
+        }
+
+        a {
+            text-decoration: none;
+            color: #007BFF;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        a:hover {
+            color: #0056b3;
+        }
+
+        .logout-form button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 15px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        .logout-form button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+{% endblock %}
